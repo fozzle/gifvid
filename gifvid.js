@@ -109,7 +109,7 @@ var gifVid = (function() {
   /* Retrieve YT vid */
   var getYoutube = function(url) {
     /* Parse out our ID */
-    var id = url.match(/http:\/\/youtu\.be\/([\w\-]+)/) || url.match(/http:\/\/www\.youtube\.com\/watch\?v=([\w\-]+)/);
+    var id = url.match(/https?:\/\/youtu\.be\/([\w\-]+)/) || url.match(/https?:\/\/www\.youtube\.com\/watch\?v=([\w\-]+)/);
 
     /* Get YT vid */
     if (id) {
