@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <title>GifVid</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="https://www.youtube.com/iframe_api" type="text/javascript"></script>
+    <script type="text/javascript">
+      google.load("search", "1");
+    </script>
+    <script type="text/javascript" src="/static/gifvid.js"></script>
+  </head>
+  <body>
+    <div class="controls">
+      <h1>GifVid</h1>
+      <form id="vidform">
+        <input type="text" placeholder="Background Tag" name="background" />
+        <input type="text" placeholder="Foreground Tag" name="foreground" />
+        <input type="text" placeholder="Youtube Link" name="music" />
+        <input type="text" placeholder="Scene Length (s)" name="timing" />
+        <button type="submit">Gif Vid!</button>
+      </form>
+      <span class="hide">&uarr;</span>
+    </div>
+    <div id="player"></div>
+    <div class="active">
+      <div class="foreground"></div>
+      <div class="background"></div>
+    </div>
+    <div class="ondeck">
+      <div class="foreground"></div>
+      <div class="background"></div>
+    </div>
+  </body>
+</html>

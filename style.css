@@ -1,0 +1,76 @@
+iframe {
+    display: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.controls {
+    color: #fff;
+    font-family: 'Helvetica Neueu', sans-serif;
+    background-color: #555555;
+    position: absolute;
+    width: 100%;
+    z-index: 9999;
+    padding: 5px;
+}
+
+.hide, .show {
+    background-color: #555555;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    cursor: hand;
+    cursor: pointer;
+}
+
+.controls h1,form {
+    display: inline-block;
+}
+
+.controls form {
+    vertical-align: text-bottom;
+}
+
+.controls h1 {
+    font-style: italic;
+    margin: 0px 20px 0px 0px;
+}
+
+.controls form button, input {
+    height: 25px;
+    margin: 0px;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0px 5px;
+}
+
+.ondeck {
+    display: none;
+}
+
+
+.foreground {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    top: 0px;
+    left: 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: 0px;
+    left: 0px;
+}
