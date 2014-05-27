@@ -53,7 +53,7 @@ var gifVid = (function() {
   }
 
   var getTag = function(tag, position, callback) {
-    $.getJSON(GIPHY_URL + "?&api_key=" + GIPHY_API_KEY + "&q=" + encodeURIComponent(tag) + "&limit=100&callback=?", 
+    $.getJSON(GIPHY_URL + "?&api_key=" + GIPHY_API_KEY + "&q=" + encodeURIComponent(tag) + "&limit=100", 
       function(data) {
         setGifs(data, position);
         if (callback) {
@@ -63,26 +63,10 @@ var gifVid = (function() {
   }
 
   var setGifs = function(data, position) {
-    var response = data.response;
+    var response = data.data;
     for (var i = 0; i < response.length; i++) {
-      var gifUrl = getGif(response[i]);
-      if (gifUrl) {
-        GIFSET[position].push(gifUrl);
-      }
+      GIFSET[position].push(response[i].images.original.url);
     }
-  }
-
-  var getGif = function(post) {
-    var photos = post.photos;
-    if (post.type === "photo") {
-      for (var i = 0; i < photos.length; i++) {
-        if (photos[i].original_size.url.match(/.gif/)) {
-          return photos[i].original_size.url;
-        }
-      }
-    }
-
-    return false;
   }
 
   /* If player is loaded, play the video and start the random images */
