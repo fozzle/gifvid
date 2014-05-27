@@ -1,6 +1,6 @@
 var gifVid = (function() {
-  var TUMBLR_API_KEY = "EBIm5Q5zng2na4EpCIH1DTb93EljXa5vDeZy2YGS3NWS25Tedd",
-    TUMBLR_URL = "http://api.tumblr.com/v2/tagged",
+  var GIPHY_API_KEY = "dc6zaTOxFJmzC",
+    GIPHY_URL = "http://api.giphy.com/v1/gifs/search",
     GIFSET = {
       "foreground": [],
       "background": []
@@ -53,7 +53,7 @@ var gifVid = (function() {
   }
 
   var getTag = function(tag, position, callback) {
-    $.getJSON(TUMBLR_URL + "?&api_key=" + TUMBLR_API_KEY + "&tag=" + tag + "%20gif&limit=100&callback=?", 
+    $.getJSON(GIPHY_URL + "?&api_key=" + GIPHY_API_KEY + "&q=" + encodeURIComponent(tag) + "&limit=100&callback=?", 
       function(data) {
         setGifs(data, position);
         if (callback) {
