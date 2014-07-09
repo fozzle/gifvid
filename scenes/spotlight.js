@@ -5,9 +5,9 @@
   * @Spotlight
   */
 
-  var Spotlight = function(el, gif1, gif2) {
+  var Spotlight = function(el, bg, fg) {
     this.el = el;
-    this.gifs = [gif1, gif2];
+    this.gifs = [bg, fg];
 
     this.render();
   }
@@ -22,9 +22,9 @@
     render: function() {
       var fg = document.createElement('div');
       fg.className = 'spotlight';
-      fg.style.backgroundImage = 'url(' + this.gifs[0].original.url + ')';
+      fg.style.backgroundImage = 'url(' + this.gifs[1].original.url + ')';
       this.el.appendChild(fg);
-      this.el.style.backgroundImage = 'url(' + this.gifs[1].fixed_height.url + ')';
+      this.el.style.backgroundImage = 'url(' + this.gifs[0].fixed_height.url + ')';
     },
 
     destroy: function() {

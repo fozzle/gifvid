@@ -58,9 +58,6 @@ var gifVid = (function() {
 
     console.log(GIFSET);
 
-
-    // document.querySelector('.ondeck > .background').style.backgroundImage = 'url(' + GIFSET.background[Math.floor(Math.random() * GIFSET.background.length)] + ')';
-    // document.querySelector('.ondeck > .foreground').style.backgroundImage = 'url(' + GIFSET.foreground[Math.floor(Math.random() * GIFSET.foreground.length)] + ')';
     deckScene = new SCENES[Math.floor(Math.random() * SCENES.length)](document.querySelector('.ondeck'), GIFSET.background[Math.floor(Math.random() * GIFSET.background.length)], GIFSET.foreground[Math.floor(Math.random() * GIFSET.foreground.length)]);
     randomScene();
 
