@@ -10,7 +10,7 @@ body {
     height: 100%;
 }
 
-.controls {
+#controls {
     color: #fff;
     font-family: 'Helvetica Neueu', sans-serif;
     background-color: #555555;
@@ -29,20 +29,20 @@ body {
     cursor: pointer;
 }
 
-.controls h1,form {
+#controls h1,form {
     display: inline-block;
 }
 
-.controls form {
+#controls form {
     vertical-align: text-bottom;
 }
 
-.controls h1 {
+#controls h1 {
     font-style: italic;
     margin: 0px 20px 0px 0px;
 }
 
-.controls form button, input {
+#controls form button, input {
     height: 25px;
     margin: 0px;
     font-weight: bold;

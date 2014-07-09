@@ -3,16 +3,10 @@
   <head>
     <title>GifVid</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script src="https://www.youtube.com/iframe_api" type="text/javascript"></script>
-    <script type="text/javascript">
-      google.load("search", "1");
-    </script>
-    <script type="text/javascript" src="gifvid.js"></script>
   </head>
   <body>
-    <div class="controls">
+    <div id="controls">
       <h1>GifVid</h1>
       <form id="vidform">
         <input type="text" placeholder="Background Tag" name="background" />
@@ -32,5 +26,7 @@
       <div class="foreground"></div>
       <div class="background"></div>
     </div>
+    <script type="text/javascript" src="lib/promise-1.0.0.min.js"></script>
+    <script type="text/javascript" src="gifvid.js"></script>
   </body>
 </html>
