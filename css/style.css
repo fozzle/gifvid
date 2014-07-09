@@ -50,27 +50,54 @@ body {
     padding: 0px 5px;
 }
 
-.ondeck {
-    display: none;
-}
-
-
-.foreground {
+.active, .ondeck {
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: 2;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
+}
+
+.ondeck {
+    z-index: -1;
+}
+
+/* spotlight */
+.spotlight {
     background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
     background-position: center;
 }
 
-.background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    top: 0px;
-    left: 0px;
+/* Pan left */
+
+.panLeft {
+    -webkit-animation: panLeft 10s infinite linear;
+    animation: panLeft 10s infinite linear;
+    background-repeat: horizontal;
+    background-position: 0 0;
+}
+
+@keyframes panLeft {
+    to {background-position: -100% 0;}
+}
+
+@-webkit-keyframes panLeft {
+    to {background-position: -100%;}
+}
+
+/* Pan right */
+.panRight {
+    -webkit-animation: panRight 10s infinite linear;
+    animation: panRight 10s infinite linear;
+    background-repeat: horizontal;
+    background-position: 0 0;
+}
+@keyframes panRight {
+    to {background-position: 100% 0;}
+}
+
+@-webkit-keyframes panRight {
+    to {background-position: 100%;}
 }
