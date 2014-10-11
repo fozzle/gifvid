@@ -5,7 +5,7 @@ var gifVid = (function() {
       "foreground": [],
       "background": []
     },
-    SCENES = [Scenes.pan, Scenes.spotlight],
+    SCENES = [/*Scenes.pan, Scenes.spotlight, */Scenes.vortex],
     deckScene,
     activeScene,
     controls = document.querySelector("#controls"),
@@ -63,7 +63,7 @@ var gifVid = (function() {
 
     var interval_length = Math.floor(Number(decoded_url.timing)) * 1000 || 4000;
 
-    bgSwitcher = setInterval(randomScene, interval_length);
+    // bgSwitcher = setInterval(randomScene, interval_length);
   }
 
   var onPlayerStateChange = function(e) {
@@ -108,6 +108,7 @@ var gifVid = (function() {
     // Replace ondeck
     if (activeScene) activeScene.destroy();
     activeScene = deckScene;
+    if (activeScene.animate) activeScene.animate();
     deckScene = new SCENES[Math.floor(Math.random() * SCENES.length)](document.querySelector('.ondeck'), GIFSET.background[Math.floor(Math.random() * GIFSET.background.length)], GIFSET.foreground[Math.floor(Math.random() * GIFSET.foreground.length)])
   }
 
