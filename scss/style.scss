@@ -103,6 +103,7 @@ body {
 .vortex {
     width: 200px;
     height: 200px;
+    transition: transform 2s linear;
 }
 
 
@@ -113,6 +114,8 @@ body {
         @include vortex-loop(($i + 1) * 2, 105px + (215px * $j))
     }
 }
+
+// Vortex animation
 
 //Pan left
 

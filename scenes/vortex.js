@@ -53,8 +53,12 @@
     },
 
     animate: function() {
-      var vortexes = document.querySelectorAll(".vortex");
-      for
+      var vortexes = document.querySelectorAll(".vortex"),
+      el;
+
+      for (var i in vortexes) {
+        el = vortexes[i];
+      }
     },
 
     destroy: function() {

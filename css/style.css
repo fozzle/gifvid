@@ -78,7 +78,8 @@ body {
 
 .vortex {
   width: 200px;
-  height: 200px; }
+  height: 200px;
+  transition: transform 2s linear; }
 
 span.vortex-row:nth-of-type(1) {
   height: auto; }
