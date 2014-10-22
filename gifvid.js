@@ -5,7 +5,7 @@ var gifVid = (function() {
       "foreground": [],
       "background": []
     },
-    SCENES = [/*Scenes.pan, Scenes.spotlight, */Scenes.vortex],
+    SCENES = [Scenes.pan, Scenes.spotlight, Scenes.vortex],
     deckScene,
     activeScene,
     controls = document.querySelector("#controls"),
@@ -63,7 +63,7 @@ var gifVid = (function() {
 
     var interval_length = Math.floor(Number(decoded_url.timing)) * 1000 || 4000;
 
-    // bgSwitcher = setInterval(randomScene, interval_length);
+    bgSwitcher = setInterval(randomScene, interval_length);
   }
 
   var onPlayerStateChange = function(e) {

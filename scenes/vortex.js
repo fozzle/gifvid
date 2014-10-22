@@ -54,10 +54,28 @@
 
     animate: function() {
       var vortexes = document.querySelectorAll(".vortex"),
+      style,
+      translation,
+      rotation,
+      values,
       el;
 
       for (var i in vortexes) {
         el = vortexes[i];
+        style = getComputedStyle(el);
+        if (!style) {
+          continue;
+        }
+        values = kutil.splitMatrix(style["-webkit-transform"]);
+        translation = values.slice(4);
+        rotation = Math.round(Math.atan2(values[1], values[0]) * (180/Math.PI));
+
+        // Normalize by adding to 180
+        if (rotation < 0) rotation = -rotation + 180;
+
+        rotation += 1000;
+
+        el.style.webkitTransform = "translate("+ translation[0] +"px,"+ translation[1] +"px) rotate("+ rotation +"deg)";
       }
     },
 

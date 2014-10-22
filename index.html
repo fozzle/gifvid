@@ -85,13 +85,18 @@
           return arguments[0];
       }
 
+      var splitMatrix = function(matrix) {
+        return matrix.split('(')[1].split(')')[0].split(',');
+      }
+
       return {
         hasClass: hasClass,
         addClass: addClass,
         removeClass: removeClass,
         parseQS: parseQS,
         param: param,
-        extend: extend
+        extend: extend,
+        splitMatrix: splitMatrix
       }
     })();
 
