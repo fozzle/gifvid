@@ -50,6 +50,7 @@
 
       this.el.appendChild(core);
       this.el.appendChild(fragment);
+      this.el.style.background = "black";
     },
 
     animate: function() {
@@ -73,7 +74,13 @@
         // Normalize by adding to 180
         if (rotation < 0) rotation = -rotation + 180;
 
-        rotation += 1000;
+        if (i < 4) {
+          rotation += 1000;
+        } else if (i < 12) {
+          rotation -= 1000;
+        } else {
+          rotation += 1000;
+        }
 
         el.style.webkitTransform = "translate("+ translation[0] +"px,"+ translation[1] +"px) rotate("+ rotation +"deg)";
       }
@@ -81,7 +88,7 @@
 
     destroy: function() {
       this.el.innerHTML = '';
-      this.el.style.backgroundImage = 'none';
+      this.el.style.background = 'none';
     }
   });
 

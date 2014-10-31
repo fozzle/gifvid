@@ -5,7 +5,7 @@ var gifVid = (function() {
       "foreground": [],
       "background": []
     },
-    SCENES = [Scenes.pan, Scenes.spotlight, Scenes.vortex],
+    SCENES = [Scenes.pan, Scenes.spotlight, Scenes.vortex, Scenes.giant, Scenes.cube],
     deckScene,
     activeScene,
     controls = document.querySelector("#controls"),
@@ -28,11 +28,23 @@ var gifVid = (function() {
           getYoutube(decoded_url.music);
         });
       });
+
+      // Populate field for easy edit
+      document.querySelector('input[name="background"]').value = decoded_url.background;
+      document.querySelector('input[name="foreground"]').value = decoded_url.foreground;
+      document.querySelector('input[name="music"]').value = decoded_url.music;
+      document.querySelector('input[name="timing"]').value = decoded_url.timing;
     }
 
     controls.querySelector('.hide').addEventListener('click', function() {
-      console.log("hide click");
+      kutil.addClass(controls, "hidden");
     });
+
+    document.addEventListener('click', function(e) {
+      if ( kutil.hasClass(e.target, 'hidden') && e.target.id === "controls") {
+        kutil.removeClass(controls, "hidden")
+      }
+    })
   }
 
   var getTag = function(tag, position, callback) {
