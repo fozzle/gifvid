@@ -61,7 +61,7 @@
       values,
       el;
 
-      for (var i in vortexes) {
+      for (var i = 0; i < vortexes.length; i++) {
         el = vortexes[i];
         style = getComputedStyle(el);
         if (!style) {
