@@ -1,7 +1,8 @@
 @import "bourbon/bourbon";
 
 iframe {
-    display: none;
+    top: -150%;
+    position: fixed;
 }
 
 body {
