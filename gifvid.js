@@ -1,6 +1,6 @@
 var gifVid = (function() {
   var GIPHY_API_KEY = "dc6zaTOxFJmzC",
-    GIPHY_URL = "http://api.giphy.com/v1/gifs/search",
+    GIPHY_URL = "https://api.giphy.com/v1/gifs/search",
     GIFSET = {
       "foreground": [],
       "background": []
